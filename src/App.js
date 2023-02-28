@@ -8,7 +8,7 @@ function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
       <div>
-        <Card
+        <Card key={Rick.id}
           name={Rick.name}
           species={Rick.species}
           gender={Rick.gender}
@@ -16,13 +16,15 @@ function App () {
           onClose={() => window.alert('Emulamos que se cierra la card')}
         />
       </div>
+
       <hr />
+
       <div>
-        <Cards
-          characters={characters}
-        />
+        <Cards characters={characters}/>
       </div>
+
       <hr />
+
       <div>
         <SearchBar
           onSearch={(characterID) => window.alert(characterID)}
