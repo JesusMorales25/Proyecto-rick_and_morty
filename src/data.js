@@ -20,6 +20,7 @@ const characters = [
     gender: "Female",
     image: "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
   },
+  
 ];
 
 export const Rick = {

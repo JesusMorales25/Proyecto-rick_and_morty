@@ -7,10 +7,6 @@ const DivCards = styled.div`
    grid-gap: 50px;
    justify-content: center;
    align-items: center;
-   height: 100vh;
-   background-color: #f5f5f5;
-   font-family: 'Baloo Paaji 2', cursive;
-
 `
 
 export default function Cards(props) {
