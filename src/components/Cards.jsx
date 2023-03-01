@@ -1,9 +1,22 @@
 import Card from './Card';
+import styled from 'styled-components';
+
+const DivCards = styled.div`
+   display: grid;
+   grid-template-columns: 300px 300px 300px;
+   grid-gap: 50px;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #f5f5f5;
+   font-family: 'Baloo Paaji 2', cursive;
+
+`
 
 export default function Cards(props) {
    const { characters } = props;
    return (
-      <div>
+      <DivCards>
          {
            characters.map((personaje) => {
             return <Card key={personaje.id}
@@ -15,6 +28,6 @@ export default function Cards(props) {
             />
            })
          }
-      </div>
+      </DivCards>
    );
 }
