@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const DivCards = styled.div`
    display: grid;
-   grid-template-columns: 300px 300px 300px;
-   grid-gap: 50px;
+   grid-template-columns: 310px 310px 310px;
    justify-content: center;
    align-items: center;
 `
