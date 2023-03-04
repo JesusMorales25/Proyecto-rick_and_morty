@@ -35,6 +35,8 @@ function App () {
           onSearch={(characterID) => window.alert(characterID)}
         />
       </div>
+      <br/>  <br/>  <br/>  <br/>  <br/> <br/><br/>
+      
     </div>
   )
 }
