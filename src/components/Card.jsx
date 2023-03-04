@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
 const DivCard = styled.div`
-
-
-
    display: flex;
    flex-direction: column;
    background-color: #14213D;

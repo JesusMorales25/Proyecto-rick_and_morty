@@ -4,9 +4,7 @@ import styled from 'styled-components';
 const DivCards = styled.div`
    display: grid;
    grid-template-columns: 300px 300px 300px;
-   grid-gap: 50px;
    justify-content: center;
-   align-items: center;
 `
 
 export default function Cards(props) {
