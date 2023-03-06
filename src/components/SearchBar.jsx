@@ -23,8 +23,10 @@ const SearchBtn = styled.button`
 const DivSearch = styled.div`
    display: flex;
    width: 300px;
-   height: 30px;
-   margin: 0 auto;
+   height: 60px;
+   margin-right: 30px;
+   margin-bottom: 10px;
+
 `
 
 const SearchInput = styled.input`
@@ -36,10 +38,11 @@ const SearchInput = styled.input`
 `
 
 export default function SearchBar(props) {
+   const {onSearch} = props;
    return (
       <DivSearch>
          <SearchInput type='search' />
-      <SearchBtn onClick={props.onSearch}>Agregar</SearchBtn>
+         <SearchBtn onClick={() => onSearch(1)}>Agregar</SearchBtn>
       </DivSearch>
    );
 }
