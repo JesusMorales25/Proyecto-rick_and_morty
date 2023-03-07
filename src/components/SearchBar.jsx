@@ -39,18 +39,17 @@ const SearchInput = styled.input`
 `
 
 export default function SearchBar(props) {
-
-   const [character,setCharacter] = useState("");
+   //console.log(props) // {onSearch: fn()}
+   const [character, setCharacter] = useState("")
    const handleInputChange = (event) => {
-      const {value} = props.target
+      const {value} = event.target
       setCharacter(value)
    }
-
-   const {onSearch} = props;
    return (
       <DivSearch>
-         <SearchInput type='search' />
-         <SearchBtn onChange={handleInputChange} onClick={() => onSearch()}>Agregar</SearchBtn>
+         <SearchInput type='search' onChange={handleInputChange}/>
+      <SearchBtn onClick={()=>props.onSearch(character)}>Agregar</SearchBtn>
       </DivSearch>
    );
 }
+

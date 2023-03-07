@@ -3,25 +3,25 @@ import styled from 'styled-components';
 
 const DivCards = styled.div`
    display: grid;
-   grid-template-columns: 310px 310px 310px;
+   grid-template-columns: 310px 310px 310px 310px 310px;
    justify-content: center;
 `
 
 export default function Cards(props) {
    const { characters } = props;
+   // characters --> [{}], onClose
    return (
-      <DivCards>
-         {
-           characters.map((personaje) => {
-            return <Card key={personaje.id}
-               name={personaje.name}
-               species={personaje.species}
-               gender={personaje.gender}
-               image={personaje.image}
-               onClose={() => window.alert('Emulamos que se cierra la card')}
-            />
-           })
-         }
-      </DivCards>
+     <DivCards>
+       {characters.map(({ id, name, species, gender, image }) => (
+         <Card
+           key={id}
+           name={name}
+           species={species}
+           gender={gender}
+           image={image}
+           onClose={() => props.onClose(id)}
+         />
+       ))}
+     </DivCards>
    );
-}
+ }

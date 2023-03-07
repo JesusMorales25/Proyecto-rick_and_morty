@@ -14,19 +14,20 @@ function App () {
           if (data.id) {
              setCharacters([...characters,data]);
           } else {
-             window.alert('No hay personajes con ese ID');
+             window.alert('Personaje no Encontrado');
           }
        });
  }
 
+ const onClose = (id) => {
+  const filtered = characters.filter((char)=>char.id !== Number(id))
+  setCharacters(filtered)
+}
+
   return (
     <div className='App' style={{ padding: '10px'}}>
-      <div>
         <Nav onSearch={onSearch}/>
-      </div>
-      <div>
-        <Cards characters={characters}/>
-      </div>
+        <Cards characters={characters} onClose={onClose}/>
     </div>
   )
 }

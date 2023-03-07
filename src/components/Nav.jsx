@@ -9,10 +9,11 @@ const StyleNav = styled.nav`
     
 `
 export default function Nav(props) {
+    //console.log(props) // {onSearch : fn()}
     return (
-        <StyleNav>
-            <SearchBar onSearch={() => props.onSearch()}/>
-        </StyleNav>
-       
+      <StyleNav>
+        <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
+      </StyleNav>
     );
- }
+  }
+  
