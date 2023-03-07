@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {useState} from 'react'
 
 const SearchBtn = styled.button`
    background: #F6B352;
@@ -38,11 +39,18 @@ const SearchInput = styled.input`
 `
 
 export default function SearchBar(props) {
+
+   const [character,setCharacter] = useState("");
+   const handleInputChange = (event) => {
+      const {value} = props.target
+      setCharacter(value)
+   }
+
    const {onSearch} = props;
    return (
       <DivSearch>
          <SearchInput type='search' />
-         <SearchBtn onClick={() => onSearch(1)}>Agregar</SearchBtn>
+         <SearchBtn onChange={handleInputChange} onClick={() => onSearch()}>Agregar</SearchBtn>
       </DivSearch>
    );
 }

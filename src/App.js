@@ -5,16 +5,14 @@ import Cards from './components/Cards.jsx'
 
 function App () {
 
-  const [characters, setCharacters] = useState({
-    characters:[],
-  })
+  const [characters, setCharacters] = useState([])
 
-  function onSearch(character) {
-    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+  function onSearch(id) {
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
        .then((response) => response.json())
        .then((data) => {
           if (data.id) {
-             setCharacters((oldChars) => [...oldChars, data]);
+             setCharacters([...characters,data]);
           } else {
              window.alert('No hay personajes con ese ID');
           }
@@ -27,7 +25,7 @@ function App () {
         <Nav onSearch={onSearch}/>
       </div>
       <div>
-        <Cards characters={characters.characters}/>
+        <Cards characters={characters}/>
       </div>
     </div>
   )
