@@ -2,6 +2,7 @@ import {useState} from 'react';
 import './App.css'
 import Nav from './components/Nav.jsx'
 import Cards from './components/Cards.jsx'
+import {Routes, Route} from 'react-router-dom'
 
 function App () {
 

@@ -1,0 +1,1 @@
+import stylesDetail from './Detail.module.css'
