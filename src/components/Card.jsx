@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink, Link } from 'react-router-dom'
 
 const DivCard = styled.div`
    display: flex;
@@ -82,20 +83,23 @@ const DivXNombre = styled.div`
       justify-content: space-around;
 `
 
-export default function Card({ name, species, image, gender, onClose }) {
+export default function Card({ name, species, image, gender, onClose, id }) {
    return (
-      <DivCard>
-         <DivXNombre>
-            <TextH2>{name}</TextH2>
-            <ButtonX onClick={onClose}>X</ButtonX>
-         </DivXNombre>
-         <ImgP src={image} alt="Not found"></ImgP>
-         
-         <DivTextDet>
-            <TextDet>{species}</TextDet>
-            <TextDet>{gender}</TextDet>
-         </DivTextDet>
-         
-      </DivCard>
+      
+         <DivCard>
+            <DivXNombre>
+            <Link to={`/detail/${id}`}>
+               <TextH2>{name}</TextH2>
+            </Link>
+               <ButtonX onClick={onClose}>X</ButtonX>
+            </DivXNombre>
+            <ImgP src={image} alt="Not found"></ImgP>
+            
+            <DivTextDet>
+               <TextDet>{species}</TextDet>
+               <TextDet>{gender}</TextDet>
+            </DivTextDet>
+            
+         </DivCard>
    );
 }
