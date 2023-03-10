@@ -8,7 +8,7 @@ const DivCard = styled.div`
    overflow: hidden;
    border-radius: 2rem;
    box-shadow: 0px 1rem 1rem rgba(black, 0.5);
-   margin: 10px;
+   margin: 15px;
    border: 5px solid #14213D;
    
    
@@ -51,7 +51,7 @@ const ButtonX = styled.button`
 const TextH2 = styled.h2`
    color: #FCA311;
    text-align: center;
-   font-size: 27px;
+   font-size: 19px;
    padding: 10px 20px;
    margin: 0px;
 `
@@ -65,6 +65,7 @@ const DivTextDet = styled.div`
       display: flex;
       justify-content: space-between;
       background-color: #F6B352;
+      margin-bottom: 0px;
       
 `
 
