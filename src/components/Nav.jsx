@@ -16,8 +16,8 @@ export default function Nav(props) {
         <StyleNav>
           <ul>
             <li><NavLink to={"/"}>Home</NavLink></li>
-            <li><NavLink to={"/About"}>About</NavLink></li>
-            <li><NavLink to={"/Cards"}>Cards</NavLink></li>
+            <li><NavLink to={"/about"}>About</NavLink></li>
+            <li><NavLink to={"/cards"}>Cards</NavLink></li>
             </ul>         
           <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
         </StyleNav>

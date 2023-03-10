@@ -5,6 +5,7 @@ import Cards from './components/Cards.jsx'
 import {Routes, Route} from 'react-router-dom'
 import About from './components/About/About';
 import Detail from './components/Detail/Detail'
+import Home from './components/Home/Home';
 
 export default function App () {
 
@@ -27,18 +28,14 @@ export default function App () {
   setCharacters(filtered)
 }
 
-  return <div>
-     <Nav onSearch={onSearch}/>
+  return <div className='App' style={{ padding: '10px'}}>
+        <Nav onSearch={onSearch}/>
     <Routes>
+      <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>} />
-      <Route path='/cards' element={<Cards/>}/>
+      <Route path='/cards' element={<Cards characters={characters} onClose={onClose}/>}/>
       <Route path='/detail:detailId' element={<Detail />}/>
-
-
     </Routes>
-    <div className='App' style={{ padding: '10px'}}>
-        <Cards characters={characters} onClose={onClose}/>
-    </div>
   </div>
   
 }

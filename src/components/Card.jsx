@@ -83,12 +83,12 @@ const DivXNombre = styled.div`
       justify-content: space-around;
 `
 
-export default function Card({ name, species, image, gender, onClose, id }) {
+export default function Card({ name, species, image, gender, onClose, detailId }) {
    return (
       
          <DivCard>
             <DivXNombre>
-            <Link to={`/detail/${id}`}>
+            <Link to={`/detail/${detailId}`}>
                <TextH2>{name}</TextH2>
             </Link>
                <ButtonX onClick={onClose}>X</ButtonX>
