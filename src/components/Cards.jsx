@@ -1,9 +1,9 @@
-import Card from './Card';
+import Card from './Card/Card';
 import styled from 'styled-components';
 
 const DivCards = styled.div`
    display: grid;
-   grid-template-columns: 310px 310px 310px 310px 310px;
+   grid-template-columns: 310px 310px 310px 310px;
    justify-content: center;
 `
 

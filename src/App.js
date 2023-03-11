@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import './App.css'
-import Nav from './components/Nav.jsx'
+import Nav from './components/Nav/Nav'
 import Cards from './components/Cards.jsx'
 import {Routes, Route} from 'react-router-dom'
 import About from './components/About/About';
@@ -13,14 +13,18 @@ export default function App () {
 
   function onSearch(id) {
     fetch(`https://rickandmortyapi.com/api/character/${id}`)
-       .then((response) => response.json())
-       .then((data) => {
-          if (data.id) {
-             setCharacters([...characters,data]);
-          } else {
-             window.alert('Personaje no Encontrado');
-          }
-       });
+    .then((res) => res.json())
+    .then((data) => {
+      // data --> {}
+      (
+        data.name
+          ? characters.filter((char) => char.id === data.id).length === 0
+          : ""
+      )
+        ? setCharacters([...characters, data])
+        : alert("Personaje ya existe");
+    })
+    .catch((error) => console.log(error));
  }
 
  const onClose = (id) => {
@@ -30,12 +34,18 @@ export default function App () {
 
   return <div className='App' style={{ padding: '10px'}}>
         <Nav onSearch={onSearch}/>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/about' element={<About/>} />
-      <Route path='/cards' element={<Cards characters={characters} onClose={onClose}/>}/>
-      <Route path='/detail:detailId' element={<Detail />}/>
-    </Routes>
+        <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route path="/about" element={<About/>}/>
+        <Route path="/detail/:detailId" element={<Detail/>}/> 
+        <Route
+          path="/Cards"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+      </Routes>
   </div>
   
 }
