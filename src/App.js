@@ -1,11 +1,12 @@
 import {useState} from 'react';
-import './App.css'
-import Nav from './components/Nav/Nav'
-import Cards from './components/Cards.jsx'
-import {Routes, Route} from 'react-router-dom'
+import './App.css';
+import Nav from './components/Nav/Nav';
+import Cards from './components/Cards.jsx';
+import {Routes, Route} from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail'
 import Home from './components/Home/Home';
+import Form from './components/Form/Form';
 
 export default function App () {
 
@@ -35,15 +36,15 @@ export default function App () {
   return <div className='App' style={{ padding: '10px'}}>
         <Nav onSearch={onSearch}/>
         <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/detail/:detailId" element={<Detail/>}/> 
-        <Route
-          path="/Cards"
-          element={<Cards characters={characters} onClose={onClose} />}
+          <Route exact
+            path="/"
+            element={<Form />}
+          />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/detail/:detailId" element={<Detail/>}/> 
+          <Route
+            path="/Cards"
+            element={<Cards characters={characters} onClose={onClose} />}
         />
       </Routes>
   </div>
