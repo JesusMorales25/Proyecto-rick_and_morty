@@ -18,11 +18,15 @@ export default function Nav(props) {
     //console.log(props) // {onSearch : fn()}
     return (
         <nav className={styles.container}>
-            <NavLinkMe to={"/"}>Home</NavLinkMe>
+            <NavLinkMe to={"/home"}>Home</NavLinkMe>
             <NavLinkMe to={"/about"}>About</NavLinkMe>
             <NavLinkMe to={"/cards"}>Cards</NavLinkMe>        
             <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
+            <form >
+              <button type='submit' className={styles.btn}>LogOut</button>
+            </form>
         </nav>
+        
     );
   }
   
