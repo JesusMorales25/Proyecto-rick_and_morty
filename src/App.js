@@ -2,13 +2,14 @@ import {useState} from 'react';
 import './App.css';
 import Nav from './components/Nav/Nav';
 import Cards from './components/Cards.jsx';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useLocation} from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail'
 import Home from './components/Home/Home';
 import Form from './components/Form/Form';
 
 export default function App () {
+  const location = useLocation();
 
   const [characters, setCharacters] = useState([])
 
@@ -34,9 +35,10 @@ export default function App () {
 }
 
   return <div className='App' style={{ padding: '10px'}}>
-        <Nav onSearch={onSearch}/>
+        {location.pathname !== "/" && 
+        <Nav onSearch={onSearch}/>}
         <Routes>
-          <Route exact
+          <Route
             path="/"
             element={<Form />}
           />
