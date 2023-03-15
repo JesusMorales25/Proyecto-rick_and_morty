@@ -63,6 +63,7 @@ useEffect(()=>{
             path="/"
             element={<Form login={login}/>}
           />
+          <Route path='/home' element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/detail/:detailId" element={<Detail/>}/> 
           <Route

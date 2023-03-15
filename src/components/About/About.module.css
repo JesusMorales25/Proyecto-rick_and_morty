@@ -1,0 +1,14 @@
+.container{
+    background-color: #14213D;
+    border: 5px solid #14213D;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
+    color: beige;
+}
+
+.title{
+    color: beige;
+}

@@ -1,19 +1,17 @@
-import stylesAbout from './About.module.css'
+import styles from './About.module.css'
 import React from 'react'
 
 export default function About(){
-    return(
-        <div>
+    return  <div >
+    <h1 className={styles.title}>About</h1>
+    <div className={styles.container}>
             <div>
-                <h2>MI INFORMACIÓN</h2>
+                <p>Aqui la imagen</p>
             </div>
-
             <div>
-                <img src="/images/imgjesus.jpg" alt="" />
-                <p>
-                    Aqui va mi información
-                </p>
+                <p className={styles.parrafo}>Aquí Escribiremos una descripción mia</p>
             </div>
-        </div>
-    )
+    </div>
+   
+</div>
 } 

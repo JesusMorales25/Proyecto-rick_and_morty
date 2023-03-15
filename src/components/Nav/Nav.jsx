@@ -22,7 +22,7 @@ export default function Nav(props) {
             <NavLinkMe to={"/about"}>About</NavLinkMe>
             <NavLinkMe to={"/cards"}>Cards</NavLinkMe>        
             <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
-            <form >
+            <form className={styles.formButton}>
               <button type='submit' className={styles.btn}>LogOut</button>
             </form>
         </nav>

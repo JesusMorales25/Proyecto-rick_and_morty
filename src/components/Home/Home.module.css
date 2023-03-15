@@ -1,12 +1,14 @@
 .container{
     background-color: #14213D;
     border: 5px solid #14213D;
-}
+    display: flex;
 
-.title{
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
     color: beige;
 }
 
-.parrafo{
+.title{
     color: beige;
 }
