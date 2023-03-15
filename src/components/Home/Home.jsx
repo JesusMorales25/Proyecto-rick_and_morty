@@ -3,7 +3,7 @@ import styles from './Home.module.css'
 
 export default function Home(){
     return <div >
-                    <h1 className={styles.title}>Estoy en el Home</h1>
+        <h1 className={styles.title}>Estoy en el Home</h1>
         <div className={styles.container}>
                 <div>
                     <p className={styles.parrafo}>Aquí Escribiremos una presentación de la página</p>
