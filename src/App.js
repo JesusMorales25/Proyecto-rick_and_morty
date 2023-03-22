@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail'
 import Home from './components/Home/Home';
 import Form from './components/Form/Form';
+import Favorites from '../src/components/Favorites/Favorites'
 
 export default function App () {
   const navigate = useNavigate();
@@ -38,11 +39,12 @@ export default function App () {
 }
 
 const login = (userData) => {
-  // {userName : "fmontoya@soyhenry.com", password: "feli123"}
-  if(userData.userName === userName &&
+   if(userData.userName === userName &&
     userData.password === password) {
       setAccess(true);
       navigate("/home")
+    }else{
+      alert("Datos Incorrectos, Porfavor Verifique")
     }
 };
 
@@ -69,7 +71,8 @@ useEffect(()=>{
           <Route
             path="/Cards"
             element={<Cards characters={characters} onClose={onClose} />}
-        />
+          />
+          <Route path='/favorites' element={<Favorites/>}/>
       </Routes>
   </div>
   

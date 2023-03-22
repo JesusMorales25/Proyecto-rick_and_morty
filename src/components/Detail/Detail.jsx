@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styles from "./Detail.module.css";
+
 export default function Detail(props) {
   const navigate = useNavigate();
   const { detailId } = useParams();

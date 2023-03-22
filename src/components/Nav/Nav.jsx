@@ -1,3 +1,4 @@
+import React from 'react';
 import SearchBar from '../SearchBar';
 import { NavLink } from 'react-router-dom';
 import styles from "./Nav.module.css";
@@ -16,15 +17,18 @@ const NavLinkMe = ({ to, children, ...props }) => {
 };
 export default function Nav(props) {
     //console.log(props) // {onSearch : fn()}
+    const handleLogOut = () => {
+      props.logOut();
+    };
+
     return (
         <nav className={styles.container}>
             <NavLinkMe to={"/home"}>Home</NavLinkMe>
             <NavLinkMe to={"/about"}>About</NavLinkMe>
-            <NavLinkMe to={"/cards"}>Cards</NavLinkMe>        
+            <NavLinkMe to={"/cards"}>Cards</NavLinkMe>
+            <NavLinkMe to={"/favorites"}>Favorites</NavLinkMe>        
             <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
-            <form className={styles.formButton}>
-              <button type='submit' className={styles.btn}>LogOut</button>
-            </form>
+            <button onClick={handleLogOut} className={styles.btn}>LogOut</button>
         </nav>
         
     );
